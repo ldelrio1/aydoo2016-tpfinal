@@ -16,7 +16,7 @@ class ObjetoEspacial
     @masa = cantidad
   end
 
-  def esta_vivo?
+  def actualizar_datos
     if @masa > 0 && @vida > 0
       @esta_vivo = true
     else
