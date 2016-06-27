@@ -269,3 +269,40 @@ describe 'Bomba contra Estrella' do
     expect(estrella.vida).to eq vida_estrella
   end
 end
+
+describe 'Asteroide contra Asteroide' do
+
+  it 'Asteroide1 choca con Asteroide2 verifica masaAsteroide1' do
+    asteroide1 = Asteroide.new
+    asteroide2 = Asteroide.new
+    asteroide1.chocar_con (asteroide2)
+    masa_asteroide1 = 100
+    expect(asteroide1.masa).to eq masa_asteroide1
+  end
+
+  it 'Asteroide1 choca con Asteroide2 verifica vidaAsteroide1' do
+    asteroide1 = Asteroide.new
+    asteroide2 = Asteroide.new
+    asteroide1.chocar_con (asteroide2)
+    vida_asteroide1 = 100
+    expect(asteroide1.vida).to eq vida_asteroide1
+  end
+
+  it 'Asteroide1 choca con Asteroide2 verifica masaAsteroide2' do
+    asteroide1 = Asteroide.new
+    asteroide2 = Asteroide.new
+    asteroide2.set_masa (500)
+    asteroide1.chocar_con (asteroide2)
+    masa_asteroide2 = 500
+    expect(asteroide2.masa).to eq masa_asteroide2
+  end
+
+  it 'Asteroide1 choca con Asteroide2 verifica vidaAsteroide2' do
+    asteroide1 = Asteroide.new
+    asteroide2 = Asteroide.new
+    asteroide1.chocar_con (asteroide2)
+    vida_asteroide2 = 100
+    expect(asteroide2.vida).to eq vida_asteroide2
+  end
+
+end
