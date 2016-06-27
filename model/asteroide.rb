@@ -7,6 +7,7 @@ class Asteroide < ObjetoEspacial
     super
     @gestor_de_choques = Hash.new
     @gestor_de_choques[Nave] = EfectoMasaPositivo.new (10)
+    @gestor_de_choques[Misil] = EfectoNulo.new
   end
 
 end

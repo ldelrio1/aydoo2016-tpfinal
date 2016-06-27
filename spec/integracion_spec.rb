@@ -145,3 +145,40 @@ describe 'Misil contra Bomba' do
     expect(bomba.vida).to eq vida_bomba
   end
 end
+
+describe 'Misil contra Asteroide' do
+  it 'Misil choca con Asteroide verifica vidaMisil' do
+    misil = Misil.new
+    misil.set_vida (120)
+    asteroide= Asteroide.new
+    misil.chocar_con(asteroide)
+    vida_misil = 120
+    expect(misil.vida).to eq vida_misil
+  end
+
+  it 'Misil choca con Asteroide verifica masaMisil' do
+    misil = Misil.new
+    misil.set_masa (70)
+    asteroide= Asteroide.new
+    misil.chocar_con(asteroide)
+    masa_misil = 70
+    expect(misil.masa).to eq masa_misil
+  end
+
+  it 'Misil choca con Asteroide verifica vidaAsteroide' do
+    misil = Misil.new
+    asteroide= Asteroide.new
+    misil.chocar_con(asteroide)
+    vida_asteroide = 100
+    expect(asteroide.vida).to eq vida_asteroide
+  end
+
+  it 'Misil choca con Asteroide verifica masaAsteroide' do
+    misil = Misil.new
+    asteroide= Asteroide.new
+    asteroide.set_masa (220)
+    misil.chocar_con(asteroide)
+    masa_asteroide = 220
+    expect(asteroide.masa).to eq masa_asteroide
+  end
+end
