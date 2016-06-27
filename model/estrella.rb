@@ -7,5 +7,6 @@ class Estrella < ObjetoEspacial
     super
     gestor_de_choques = Hash.new
     @gestor_de_choques[Nave] = EfectoDestructivoPorPorcentaje.new (100)
+    @gestor_de_choques[Misil] = EfectoNulo.new
   end
 end

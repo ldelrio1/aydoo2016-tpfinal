@@ -11,5 +11,7 @@ class Misil < ObjetoEspacial
     @gestor_de_choques[Misil] = EfectoDestructivoPorUnidades.new (100)
     @gestor_de_choques[Bomba] = EfectoNulo.new
     @gestor_de_choques[Asteroide] = EfectoNulo.new
+    @gestor_de_choques[Estrella] = EfectoNulo.new
+
   end
 end

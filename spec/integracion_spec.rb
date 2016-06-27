@@ -150,7 +150,7 @@ describe 'Misil contra Asteroide' do
   it 'Misil choca con Asteroide verifica vidaMisil' do
     misil = Misil.new
     misil.set_vida (120)
-    asteroide= Asteroide.new
+    asteroide = Asteroide.new
     misil.chocar_con(asteroide)
     vida_misil = 120
     expect(misil.vida).to eq vida_misil
@@ -159,7 +159,7 @@ describe 'Misil contra Asteroide' do
   it 'Misil choca con Asteroide verifica masaMisil' do
     misil = Misil.new
     misil.set_masa (70)
-    asteroide= Asteroide.new
+    asteroide = Asteroide.new
     misil.chocar_con(asteroide)
     masa_misil = 70
     expect(misil.masa).to eq masa_misil
@@ -167,7 +167,7 @@ describe 'Misil contra Asteroide' do
 
   it 'Misil choca con Asteroide verifica vidaAsteroide' do
     misil = Misil.new
-    asteroide= Asteroide.new
+    asteroide = Asteroide.new
     misil.chocar_con(asteroide)
     vida_asteroide = 100
     expect(asteroide.vida).to eq vida_asteroide
@@ -175,10 +175,30 @@ describe 'Misil contra Asteroide' do
 
   it 'Misil choca con Asteroide verifica masaAsteroide' do
     misil = Misil.new
-    asteroide= Asteroide.new
+    asteroide = Asteroide.new
     asteroide.set_masa (220)
     misil.chocar_con(asteroide)
     masa_asteroide = 220
     expect(asteroide.masa).to eq masa_asteroide
+  end
+end
+
+describe 'Misil contra Estrella' do
+  it 'Misil choca con Estrella verifica masaMisil' do
+    misil = Misil.new
+    misil.set_masa (340)
+    estrella = Estrella.new
+    misil.chocar_con(estrella)
+    masa_misil = 340
+    expect(misil.masa).to eq masa_misil
+  end
+
+  it 'Misil choca con Estrella verifica vidaEstrella' do
+    misil = Misil.new
+    estrella = Estrella.new
+    estrella.set_vida (40)
+    misil.chocar_con(estrella)
+    vida_estrella = 40
+    expect(estrella.vida).to eq vida_estrella
   end
 end
