@@ -11,8 +11,6 @@ class EfectoDestructivoPorUnidades < EfectoDeChoque
   end
 
   def gestionar_choque(chocador, chocado)
-    @objeto_chocador = chocador
-    vida_chocador = @objeto_chocador.vida
-    @objeto_chocador.vida = vida_chocador - @unidades_destructivo
+    chocador.vida -= @unidades_destructivo
   end
 end
