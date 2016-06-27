@@ -104,3 +104,25 @@ describe 'Nave contra Estrella' do
     expect(estrella.vida).to eq vida_estrella
   end
 end
+
+describe 'Misil contra Misil' do
+  it 'Misil1 choca con Misil2 verifica Misil1' do
+    misil1 = Misil.new
+    misil2 = Misil.new
+    misil1.set_vida (150)
+    misil2.set_vida (200)
+    misil1.chocar_con(misil2)
+    vida_misil1 = 50
+    expect(misil1.vida).to eq vida_misil1
+  end
+
+  it 'Misil1 choca con Misil2 verifica Misil2' do
+    misil1 = Misil.new
+    misil2 = Misil.new
+    misil1.set_vida (150)
+    misil2.set_vida (200)
+    misil1.chocar_con(misil2)
+    vida_misil2 = 100
+    expect(misil2.vida).to eq vida_misil2
+  end
+end
