@@ -1,17 +1,17 @@
 require_relative '../model/efecto_de_choque'
 
-class EfectoMasaPositivo < EfectoDeChoque
+class EfectoMasa < EfectoDeChoque
 
   def initialize (porcentaje)
-    if porcentaje > 0
+    if porcentaje != 0
       @porcentaje = porcentaje
     else
-      fail ExcepcionNumeroIngresado.new
+      fail ExcepcionPorcentajeCero.new
     end
   end
 
   def gestionar_choque(chocador, chocado)
-    aumento = (chocado.masa * @porcentaje / 100)
-    chocador.masa += aumento
+    efecto_masa = (chocado.masa * @porcentaje / 100)
+    chocador.masa += efecto_masa
   end
 end
