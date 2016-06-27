@@ -25,16 +25,16 @@ describe 'Nave' do
 
   it 'verifica que la nave no esta viva cuando vida es cero' do
     mi_nave = Nave.new
-    mi_nave.set_vida (0)
-    mi_nave.actualizar_datos
+    mi_nave.vida = 0
+    mi_nave.actualizar_estado
     esta_vivo = false
     expect(mi_nave.esta_vivo).to eq esta_vivo
   end
 
   it 'verifica que la nave no esta viva cuando masa es cero' do
     mi_nave = Nave.new
-    mi_nave.set_masa (0)
-    mi_nave.actualizar_datos
+    mi_nave.masa = 0
+    mi_nave.actualizar_estado
     esta_vivo = false
     expect(mi_nave.esta_vivo).to eq esta_vivo
   end

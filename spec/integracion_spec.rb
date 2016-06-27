@@ -11,19 +11,19 @@ describe 'Nave contra Nave' do
 
   it 'Nave1 choca con Nave2 verifica Nave1' do
     nave1 = Nave.new
-    nave1.set_vida 200
+    nave1.vida = 200
     nave2 = Nave.new
-    nave2.set_vida 200
+    nave2.vida = 200
     nave1.chocar_con(nave2)
     vida_nave1 = 100
     expect(nave1.vida).to eq vida_nave1
-    end
+  end
 
   it 'Nave1 choca con Nave2 verifica Nave2' do
     nave1 = Nave.new
-    nave1.set_vida 200
+    nave1.vida = 200
     nave2 = Nave.new
-    nave2.set_vida 100
+    nave2.vida = 100
     nave1.chocar_con(nave2)
     vida_nave2 = 0
     expect(nave2.vida).to eq vida_nave2
@@ -111,8 +111,8 @@ describe 'Misil contra Misil' do
   it 'Misil1 choca con Misil2 verifica Misil1' do
     misil1 = Misil.new
     misil2 = Misil.new
-    misil1.set_vida (150)
-    misil2.set_vida (200)
+    misil1.vida = 150
+    misil2.vida = 200
     misil1.chocar_con(misil2)
     vida_misil1 = 50
     expect(misil1.vida).to eq vida_misil1
@@ -121,8 +121,8 @@ describe 'Misil contra Misil' do
   it 'Misil1 choca con Misil2 verifica Misil2' do
     misil1 = Misil.new
     misil2 = Misil.new
-    misil1.set_vida (150)
-    misil2.set_vida (200)
+    misil1.vida = 150
+    misil2.vida = 200
     misil1.chocar_con(misil2)
     vida_misil2 = 100
     expect(misil2.vida).to eq vida_misil2
@@ -142,7 +142,7 @@ describe 'Misil contra Bomba' do
   it 'Misil choca con Bomba verifica Bomba' do
     misil = Misil.new
     bomba = Bomba.new
-    bomba.set_vida (500)
+    bomba.vida = 500
     misil.chocar_con(bomba)
     vida_bomba = 250
     expect(bomba.vida).to eq vida_bomba
@@ -153,7 +153,7 @@ describe 'Misil contra Asteroide' do
 
   it 'Misil choca con Asteroide verifica vidaMisil' do
     misil = Misil.new
-    misil.set_vida (120)
+    misil.vida = 120
     asteroide = Asteroide.new
     misil.chocar_con(asteroide)
     vida_misil = 120
@@ -162,7 +162,7 @@ describe 'Misil contra Asteroide' do
 
   it 'Misil choca con Asteroide verifica masaMisil' do
     misil = Misil.new
-    misil.set_masa (70)
+    misil.masa = 70
     asteroide = Asteroide.new
     misil.chocar_con(asteroide)
     masa_misil = 70
@@ -180,7 +180,7 @@ describe 'Misil contra Asteroide' do
   it 'Misil choca con Asteroide verifica masaAsteroide' do
     misil = Misil.new
     asteroide = Asteroide.new
-    asteroide.set_masa (220)
+    asteroide.masa = 220
     misil.chocar_con(asteroide)
     masa_asteroide = 220
     expect(asteroide.masa).to eq masa_asteroide
@@ -191,7 +191,7 @@ describe 'Misil contra Estrella' do
 
   it 'Misil choca con Estrella verifica masaMisil' do
     misil = Misil.new
-    misil.set_masa (340)
+    misil.masa = 340
     estrella = Estrella.new
     misil.chocar_con(estrella)
     masa_misil = 340
@@ -201,7 +201,7 @@ describe 'Misil contra Estrella' do
   it 'Misil choca con Estrella verifica vidaEstrella' do
     misil = Misil.new
     estrella = Estrella.new
-    estrella.set_vida (40)
+    estrella.vida = 40
     misil.chocar_con(estrella)
     vida_estrella = 40
     expect(estrella.vida).to eq vida_estrella
@@ -221,7 +221,7 @@ describe 'Bomba contra Bomba' do
   it 'Bomba1 choca con Bomba2 verifica Bomba2' do
     bomba1 = Bomba.new
     bomba2 = Bomba.new
-    bomba2.set_vida (140)
+    bomba2.vida = 140
     bomba1.chocar_con(bomba2)
     vida_bomba2 = 40
     expect(bomba2.vida).to eq vida_bomba2
@@ -232,7 +232,7 @@ describe 'Bomba contra Asteroide' do
 
   it 'Bomba choca con Asteroide verifica Bomba' do
     bomba = Bomba.new
-    bomba.set_vida (150)
+    bomba.vida = 150
     asteroide = Asteroide.new
     bomba.chocar_con(asteroide)
     vida_bomba = 0
@@ -252,7 +252,7 @@ describe 'Bomba contra Estrella' do
 
   it 'Bomba choca con Estrella verifica Bomba' do
     bomba = Bomba.new
-    bomba.set_vida (125)
+    bomba.vida = 125
     estrella = Estrella.new
     bomba.chocar_con(estrella)
     vida_bomba = 25
@@ -261,9 +261,9 @@ describe 'Bomba contra Estrella' do
 
   it 'Bomba choca con Estrella verifica Estrella' do
     bomba = Bomba.new
-    bomba.set_vida (125)
+    bomba.vida = 125
     estrella = Estrella.new
-    estrella.set_vida (205)
+    estrella.vida = 205
     bomba.chocar_con(estrella)
     vida_estrella = 0
     expect(estrella.vida).to eq vida_estrella
@@ -291,7 +291,7 @@ describe 'Asteroide contra Asteroide' do
   it 'Asteroide1 choca con Asteroide2 verifica masaAsteroide2' do
     asteroide1 = Asteroide.new
     asteroide2 = Asteroide.new
-    asteroide2.set_masa (500)
+    asteroide2.masa = 500
     asteroide1.chocar_con (asteroide2)
     masa_asteroide2 = 500
     expect(asteroide2.masa).to eq masa_asteroide2
@@ -311,7 +311,7 @@ describe 'Asteroide contra Estrella' do
 
   it 'Asteroide choca Estrella verifica Asteroide' do
     asteroide = Asteroide.new
-    asteroide.set_vida(180)
+    asteroide.vida = 180
     estrella = Estrella.new
     asteroide.chocar_con (estrella)
     vida_asteroide = 180
@@ -321,7 +321,7 @@ describe 'Asteroide contra Estrella' do
   it 'Asteroide choca Estrella verifica Estrella' do
     asteroide = Asteroide.new
     estrella = Estrella.new
-    estrella.set_vida(300)
+    estrella.vida = 300
     asteroide.chocar_con (estrella)
     vida_estrella = 0
     expect(estrella.vida).to eq vida_estrella
@@ -332,9 +332,9 @@ describe 'Estrella1 contra Estrella2' do
 
   it 'Estrella1 choca Estrella2 verifica Estrella1' do
     estrella1 = Estrella.new
-    estrella1.set_vida (200)
+    estrella1.vida = 200
     estrella2 = Estrella.new
-    estrella2.set_vida (200)
+    estrella2.vida = 200
     estrella1.chocar_con (estrella2)
     vida_estrella1 = 0
     expect(estrella1.vida).to eq vida_estrella1
@@ -342,9 +342,9 @@ describe 'Estrella1 contra Estrella2' do
 
   it 'Estrella1 choca Estrella2 verifica Estrella2' do
     estrella1 = Estrella.new
-    estrella1.set_vida (200)
+    estrella1.vida = 200
     estrella2 = Estrella.new
-    estrella2.set_vida (200)
+    estrella2.vida = 200
     estrella1.chocar_con (estrella2)
     vida_estrella2 = 0
     expect(estrella2.vida).to eq vida_estrella2

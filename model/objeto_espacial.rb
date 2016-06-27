@@ -9,15 +9,7 @@ class ObjetoEspacial
     @gestor_de_choques = Hash.new {}
   end
 
-  def set_vida (cantidad)
-    @vida = cantidad
-  end
-
-  def set_masa (cantidad)
-    @masa = cantidad
-  end
-
-  def actualizar_datos
+  def actualizar_estado
     if @masa > 0 && @vida > 0
       @esta_vivo = true
     else
@@ -29,12 +21,14 @@ class ObjetoEspacial
     if self.esta_vivo = true && objeto_chocado.esta_vivo = true
 
       objeto_chocador_original = (self.class).new
-      objeto_chocador_original.set_vida self.vida
-      objeto_chocador_original.set_masa self.masa
+      objeto_chocador_original.vida = self.vida
+      objeto_chocador_original.masa = self.masa
 
       @gestor_de_choques.fetch(objeto_chocado.class).gestionar_choque(self,objeto_chocado)
       objeto_chocado.gestor_de_choques.fetch(self.class).gestionar_choque(objeto_chocado, objeto_chocador_original)
 
+      self.actualizar_estado
+      objeto_chocado.actualizar_estado
     elsif super.esta_vivo = false
       fail ExcepcionObjetoEspacialDestruido.new
     elsif chocado.esta_vivo = false
