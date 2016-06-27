@@ -2,6 +2,7 @@ require 'rspec'
 require 'spec_helper'
 require_relative '../model/nave'
 require_relative '../model/misil'
+require_relative '../model/bomba'
 require_relative '../model/asteroide'
 require_relative '../model/estrella'
 
@@ -106,6 +107,7 @@ describe 'Nave contra Estrella' do
 end
 
 describe 'Misil contra Misil' do
+
   it 'Misil1 choca con Misil2 verifica Misil1' do
     misil1 = Misil.new
     misil2 = Misil.new
@@ -128,6 +130,7 @@ describe 'Misil contra Misil' do
 end
 
 describe 'Misil contra Bomba' do
+
   it 'Misil choca con Bomba verifica Misil' do
     misil = Misil.new
     bomba = Bomba.new
@@ -147,6 +150,7 @@ describe 'Misil contra Bomba' do
 end
 
 describe 'Misil contra Asteroide' do
+
   it 'Misil choca con Asteroide verifica vidaMisil' do
     misil = Misil.new
     misil.set_vida (120)
@@ -184,6 +188,7 @@ describe 'Misil contra Asteroide' do
 end
 
 describe 'Misil contra Estrella' do
+
   it 'Misil choca con Estrella verifica masaMisil' do
     misil = Misil.new
     misil.set_masa (340)
@@ -200,5 +205,25 @@ describe 'Misil contra Estrella' do
     misil.chocar_con(estrella)
     vida_estrella = 40
     expect(estrella.vida).to eq vida_estrella
+  end
+end
+
+describe 'Bomba contra Bomba' do
+
+  it 'Bomba1 choca con Bomba2 verifica Bomba1' do
+    bomba1 = Bomba.new
+    bomba2 = Bomba.new
+    bomba1.chocar_con(bomba2)
+    vida_bomba1 = 0
+    expect(bomba1.vida).to eq vida_bomba1
+  end
+
+  it 'Bomba1 choca con Bomba2 verifica Bomba2' do
+    bomba1 = Bomba.new
+    bomba2 = Bomba.new
+    bomba2.set_vida (140)
+    bomba1.chocar_con(bomba2)
+    vida_bomba2 = 40
+    expect(bomba2.vida).to eq vida_bomba2
   end
 end
