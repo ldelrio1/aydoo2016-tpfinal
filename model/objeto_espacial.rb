@@ -27,8 +27,13 @@ class ObjetoEspacial
 
   def chocar_con (objeto_chocado)
     if self.esta_vivo = true && objeto_chocado.esta_vivo = true
+
+      objeto_chocador_original = (self.class).new
+      objeto_chocador_original.set_vida self.vida
+      objeto_chocador_original.set_masa self.masa
+
       @gestor_de_choques.fetch(objeto_chocado.class).gestionar_choque(self,objeto_chocado)
-      objeto_chocado.gestor_de_choques.fetch(self.class).gestionar_choque(objeto_chocado, self)
+      objeto_chocado.gestor_de_choques.fetch(self.class).gestionar_choque(objeto_chocado, objeto_chocador_original)
 
     elsif super.esta_vivo = false
       fail ExcepcionObjetoEspacialDestruido.new

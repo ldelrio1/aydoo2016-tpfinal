@@ -2,6 +2,7 @@ require 'rspec'
 require 'spec_helper'
 require_relative '../model/nave'
 require_relative '../model/misil'
+require_relative '../model/asteroide'
 
 describe 'Nave contra Nave' do
 
@@ -62,4 +63,24 @@ describe 'Nave contra Bomba' do
     vida_bomba = 0
     expect(bomba.vida).to eq vida_bomba
   end
+end
+
+describe 'Nave contra Asteroide' do
+
+  it 'Nave choca con Asteroide verifica Nave' do
+    nave = Nave.new
+    asteroide = Asteroide.new
+    nave.chocar_con(asteroide)
+    masa_nave = 50
+    expect(nave.masa).to eq masa_nave
+  end
+
+  it 'Nave choca con Asteroide verifica Asteroide' do
+    nave = Nave.new
+    asteroide = Asteroide.new
+    nave.chocar_con(asteroide)
+    masa_asteroide = 110
+    expect(asteroide.masa).to eq masa_asteroide
+  end
+
 end
