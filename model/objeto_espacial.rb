@@ -18,7 +18,7 @@ class ObjetoEspacial
   end
 
   def chocar_con (objeto_chocado)
-    if self.esta_vivo = true && objeto_chocado.esta_vivo = true
+    if self.esta_vivo && objeto_chocado.esta_vivo
 
       objeto_chocador_original = (self.class).new
       objeto_chocador_original.vida = self.vida
@@ -37,5 +37,4 @@ class ObjetoEspacial
       fail ExcepcionObjetosMuertos.new
     end
   end
-
 end
