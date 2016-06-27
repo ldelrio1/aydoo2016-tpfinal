@@ -227,3 +227,23 @@ describe 'Bomba contra Bomba' do
     expect(bomba2.vida).to eq vida_bomba2
   end
 end
+
+describe 'Bomba contra Asteroide' do
+
+  it 'Bomba choca con Asteroide verifica Bomba' do
+    bomba = Bomba.new
+    bomba.set_vida (150)
+    asteroide = Asteroide.new
+    bomba.chocar_con(asteroide)
+    vida_bomba = 0
+    expect(bomba.vida).to eq vida_bomba
+  end
+
+  it 'Bomba choca con Asteroide verifica Asteroide' do
+    bomba = Bomba.new
+    asteroide = Asteroide.new
+    bomba.chocar_con(asteroide)
+    vida_asteroide = 100
+    expect(asteroide.vida).to eq vida_asteroide
+  end
+end

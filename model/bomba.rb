@@ -10,6 +10,7 @@ class Bomba < ObjetoEspacial
     @gestor_de_choques[Nave] = EfectoDestructivoPorUnidades.new (100)
     @gestor_de_choques[Misil] = EfectoDestructivoPorPorcentaje.new (50)
     @gestor_de_choques[Bomba] = EfectoDestructivoPorUnidades.new (100)
+    @gestor_de_choques[Asteroide] = EfectoDestructivoPorPorcentaje.new (100)
 
   end
 end
