@@ -306,3 +306,24 @@ describe 'Asteroide contra Asteroide' do
   end
 
 end
+
+describe 'Asteroide contra Estrella' do
+
+  it 'Asteroide choca Estrella verifica Asteroide' do
+    asteroide = Asteroide.new
+    asteroide.set_vida(180)
+    estrella = Estrella.new
+    asteroide.chocar_con (estrella)
+    vida_asteroide = 180
+    expect(asteroide.vida).to eq vida_asteroide
+  end
+
+  it 'Asteroide choca Estrella verifica Estrella' do
+    asteroide = Asteroide.new
+    estrella = Estrella.new
+    estrella.set_vida(300)
+    asteroide.chocar_con (estrella)
+    vida_estrella = 0
+    expect(estrella.vida).to eq vida_estrella
+  end
+end
