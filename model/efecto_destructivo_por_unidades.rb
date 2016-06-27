@@ -6,6 +6,7 @@ class EfectoDestructivoPorUnidades < EfectoDeChoque
     if unidades > 0
       @unidades_destructivo = unidades
     else
+      fail ExcepcionNumeroIngresado.new
     end
   end
 
