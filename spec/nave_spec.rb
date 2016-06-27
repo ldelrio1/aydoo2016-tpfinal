@@ -37,7 +37,7 @@ describe 'Nave' do
     expect(mi_nave.esta_vivo).to eq esta_vivo
   end
 
-  it 'Nave choca con Nave verifica Nave1' do
+  it 'Nave1 choca con Nave2 verifica Nave1' do
     nave1 = Nave.new
     nave1.set_vida 200
     nave2 = Nave.new
@@ -48,7 +48,7 @@ describe 'Nave' do
     expect(nave1.vida).to eq vida_nave1
   end
 
-  it 'Nave choca con Nave verifica Nave2' do
+  it 'Nave1 choca con Nave2 verifica Nave2' do
     nave1 = Nave.new
     nave1.set_vida 200
     nave2 = Nave.new
@@ -57,5 +57,4 @@ describe 'Nave' do
     vida_nave2 = 0
     expect(nave2.vida).to eq vida_nave2
   end
-
 end
