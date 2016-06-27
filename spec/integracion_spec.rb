@@ -73,8 +73,9 @@ describe 'Nave contra Asteroide' do
   it 'Nave choca con Asteroide verifica Nave' do
     nave = Nave.new
     asteroide = Asteroide.new
+    nave.masa = 120
     nave.chocar_con(asteroide)
-    masa_nave = 50
+    masa_nave = 70
     expect(nave.masa).to eq masa_nave
   end
 

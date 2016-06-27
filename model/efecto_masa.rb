@@ -3,11 +3,7 @@ require_relative '../model/efecto_de_choque'
 class EfectoMasa < EfectoDeChoque
 
   def initialize (porcentaje)
-    if porcentaje != 0
       @porcentaje = porcentaje
-    else
-      fail ExcepcionPorcentajeCero.new
-    end
   end
 
   def gestionar_choque(chocador, chocado)
