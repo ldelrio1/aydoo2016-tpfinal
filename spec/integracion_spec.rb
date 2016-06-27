@@ -43,3 +43,22 @@ describe 'Nave contra Misil' do
     expect(misil.vida).to eq vida_misil
   end
 end
+
+describe 'Nave contra Bomba' do
+
+  it 'Nave choca con Bomba verifica Nave' do
+    nave = Nave.new
+    bomba = Bomba.new
+    nave.chocar_con(bomba)
+    vida_nave = 50
+    expect(nave.vida).to eq vida_nave
+  end
+
+  it 'Nave choca con Bomba verifica Bomba' do
+    nave = Nave.new
+    bomba = Bomba.new
+    nave.chocar_con(bomba)
+    vida_bomba = 0
+    expect(bomba.vida).to eq vida_bomba
+  end
+end

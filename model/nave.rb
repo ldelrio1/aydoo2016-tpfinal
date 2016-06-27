@@ -8,6 +8,7 @@ class Nave < ObjetoEspacial
     @gestor_de_choques = Hash.new
     @gestor_de_choques[Nave] = EfectoDestructivo.new (100)
     @gestor_de_choques[Misil] = EfectoDestructivo.new (80)
+    @gestor_de_choques[Bomba] = EfectoDestructivo.new (50)
   end
 
 end
