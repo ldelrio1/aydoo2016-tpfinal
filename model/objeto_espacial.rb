@@ -1,11 +1,12 @@
 class ObjetoEspacial
 
-  attr_accessor :masa, :vida, :esta_vivo
+  attr_accessor :masa, :vida, :esta_vivo, :gestor_de_choques
 
   def initialize
     @masa = 100
     @vida = 100
     @esta_vivo = true
+    @gestor_de_choques = Hash.new {}
   end
 
   def set_vida (cantidad)
@@ -25,7 +26,8 @@ class ObjetoEspacial
   end
 
   def chocar_con (objeto_chocado)
-    if super.esta_vivo = true && chocado.esta_vivo = true
+    if self.esta_vivo = true && objeto_chocado.esta_vivo = true
+      @gestor_de_choques.fetch(objeto_chocado.class).gestionar_choque(self,objeto_chocado)
 
     elsif super.esta_vivo = false
       fail ExcepcionObjetoEspacialDestruido.new
@@ -35,4 +37,5 @@ class ObjetoEspacial
       fail ExcepcionObjetosMuertos.new
     end
   end
+
 end
