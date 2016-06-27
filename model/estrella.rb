@@ -10,6 +10,6 @@ class Estrella < ObjetoEspacial
     @gestor_de_choques[Misil] = EfectoNulo.new
     @gestor_de_choques[Bomba] = EfectoDestructivoPorPorcentaje.new (100)
     @gestor_de_choques[Asteroide] = EfectoDestructivoPorPorcentaje.new (100)
-
+    @gestor_de_choques[Estrella] = EfectoDestructivoPorPorcentaje.new (100)
   end
 end

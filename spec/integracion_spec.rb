@@ -327,3 +327,26 @@ describe 'Asteroide contra Estrella' do
     expect(estrella.vida).to eq vida_estrella
   end
 end
+
+describe 'Estrella1 contra Estrella2' do
+
+  it 'Estrella1 choca Estrella2 verifica Estrella1' do
+    estrella1 = Estrella.new
+    estrella1.set_vida (200)
+    estrella2 = Estrella.new
+    estrella2.set_vida (200)
+    estrella1.chocar_con (estrella2)
+    vida_estrella1 = 0
+    expect(estrella1.vida).to eq vida_estrella1
+  end
+
+  it 'Estrella1 choca Estrella2 verifica Estrella2' do
+    estrella1 = Estrella.new
+    estrella1.set_vida (200)
+    estrella2 = Estrella.new
+    estrella2.set_vida (200)
+    estrella1.chocar_con (estrella2)
+    vida_estrella2 = 0
+    expect(estrella2.vida).to eq vida_estrella2
+  end
+end
