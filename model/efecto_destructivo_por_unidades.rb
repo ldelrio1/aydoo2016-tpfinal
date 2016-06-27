@@ -1,6 +1,6 @@
 require_relative '../model/efecto_de_choque'
 
-class EfectoDestructivo < EfectoDeChoque
+class EfectoDestructivoPorUnidades < EfectoDeChoque
 
   def initialize (unidades)
     if unidades > 0
