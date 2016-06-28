@@ -505,5 +505,90 @@ describe 'Ejemplo3 Bomba choca con otraBomba' do
     masa_otra_bomba = 45
     expect(otra_bomba.masa).to eq masa_otra_bomba
   end
+end
 
+describe 'Ejemplo 4 Bomba choca con Asteroide' do
+
+  it 'verifica vida Bomba' do
+    bomba = Bomba.new
+    asteroide = Asteroide.new
+    bomba.vida = 200
+    asteroide.vida = 30
+    bomba.chocar_con (asteroide)
+    vida_bomba = 0
+    expect(bomba.vida).to eq vida_bomba
+  end
+
+  it 'verifica masa Bomba' do
+    bomba = Bomba.new
+    asteroide = Asteroide.new
+    bomba.vida = 200
+    asteroide.vida = 30
+    bomba.chocar_con (asteroide)
+    masa_bomba = 100
+    expect(bomba.masa).to eq masa_bomba
+  end
+
+  it 'verifica vida Asteroide' do
+    bomba = Bomba.new
+    asteroide = Asteroide.new
+    bomba.vida = 200
+    asteroide.vida = 30
+    bomba.chocar_con (asteroide)
+    vida_asteroide = 30
+    expect(asteroide.vida).to eq vida_asteroide
+  end
+
+  it 'verifica masa Asteroide' do
+    bomba = Bomba.new
+    asteroide = Asteroide.new
+    bomba.vida = 200
+    asteroide.vida = 30
+    bomba.chocar_con (asteroide)
+    masa_asteroide = 100
+    expect(asteroide.masa).to eq masa_asteroide
+  end
+end
+
+describe 'Ejemplo5 Nave choca con Estrella' do
+
+  it 'verifica vida Nave' do
+    nave = Nave.new
+    estrella = Estrella.new
+    estrella.vida = 50
+    estrella.masa = 50
+    nave.chocar_con(estrella)
+    vida_nave = 150
+    expect(nave.vida).to eq vida_nave
+  end
+
+  it 'verifica masa Nave' do
+    nave = Nave.new
+    estrella = Estrella.new
+    estrella.vida = 50
+    estrella.masa = 50
+    nave.chocar_con(estrella)
+    masa_nave = 100
+    expect(nave.masa).to eq masa_nave
+  end
+
+  it 'verifica vida Estrella' do
+    nave = Nave.new
+    estrella = Estrella.new
+    estrella.vida = 50
+    estrella.masa = 50
+    nave.chocar_con(estrella)
+    vida_estrella = 0
+    expect(estrella.vida).to eq vida_estrella
+  end
+
+  it 'verifica masa Estrella' do
+    nave = Nave.new
+    estrella = Estrella.new
+    estrella.vida = 50
+    estrella.masa = 50
+    nave.chocar_con(estrella)
+    masa_estrella = 50
+    expect(estrella.masa).to eq masa_estrella
+  end
 end
