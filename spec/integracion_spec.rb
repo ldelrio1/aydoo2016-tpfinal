@@ -5,8 +5,9 @@ require_relative '../model/misil'
 require_relative '../model/bomba'
 require_relative '../model/asteroide'
 require_relative '../model/estrella'
-require_relative '../model/excepcion_destruido'
-
+require_relative '../model/excepcion_chocador_destruido'
+require_relative '../model/excepcion_chocado_destruido'
+require_relative '../model/excepcion_dos_objetos_destruidos'
 
 describe 'Nave contra Nave' do
 
@@ -360,7 +361,7 @@ describe 'Excepcion con objeto sin vida' do
     misil = Misil.new
     misil.chocar_con (nave)
     asteroide = Asteroide.new
-    expect{misil.chocar_con(asteroide)}.to raise_exception(ExcepcionObjetoEspacialDestruido)
+    expect{misil.chocar_con(asteroide)}.to raise_exception(ExcepcionObjetoEspacialChocadorDestruido)
   end
 
   it 'Objeto chocado sin vida espera ExcepcionChocadoDestruido' do
