@@ -353,7 +353,7 @@ describe 'Estrella1 contra Estrella2' do
   end
 end
 
-describe 'Excepcion con objeto sin vida' do
+describe 'Excepcion en choque con objeto sin vida' do
 
   it 'Objeto chocador sin vida espera ExcepcionObjetoEspacialDestruido' do
     nave = Nave.new
