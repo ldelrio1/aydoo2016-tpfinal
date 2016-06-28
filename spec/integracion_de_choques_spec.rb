@@ -495,7 +495,15 @@ describe 'Ejemplo3 Bomba choca con otraBomba' do
   end
 
   it 'verifica masa otraBomba' do
-
+    bomba = Bomba.new
+    otra_bomba = Bomba.new
+    bomba.vida = 200
+    bomba.masa = 90
+    otra_bomba.vida = 20
+    otra_bomba.masa = 45
+    bomba.chocar_con (otra_bomba)
+    masa_otra_bomba = 45
+    expect(otra_bomba.masa).to eq masa_otra_bomba
   end
 
 end
