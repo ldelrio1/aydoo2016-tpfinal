@@ -8,12 +8,12 @@ class Nave < ObjetoEspacial
 
   def initialize
     super
-    @gestor_de_choques = Hash.new
-    @gestor_de_choques[Nave] = EfectoDestructivoPorUnidades.new (100)
-    @gestor_de_choques[Misil] = EfectoDestructivoPorUnidades.new (80)
-    @gestor_de_choques[Bomba] = EfectoDestructivoPorUnidades.new (50)
-    @gestor_de_choques[Asteroide] = EfectoMasa.new (-50)
-    @gestor_de_choques[Estrella] = EfectoConstructivo.new
+    @choques_posibles = Hash.new
+    @choques_posibles[Nave] = EfectoDestructivoPorUnidades.new (100)
+    @choques_posibles[Misil] = EfectoDestructivoPorUnidades.new (80)
+    @choques_posibles[Bomba] = EfectoDestructivoPorUnidades.new (50)
+    @choques_posibles[Asteroide] = EfectoMasa.new (-50)
+    @choques_posibles[Estrella] = EfectoConstructivo.new
   end
 
 end

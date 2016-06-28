@@ -6,7 +6,7 @@ describe 'Asteroide' do
 
   it 'crea Asteroide y settea gestorDeChoques espera ExcepcionPorcentajeCero' do
     asteroide = Asteroide.new
-    expect{asteroide.gestor_de_choques[Nave] = EfectoMasa.new (0)}.to raise_exception(ExcepcionPorcentajeCero)
+    expect{asteroide.choques_posibles[Nave] = EfectoMasa.new (0)}.to raise_exception(ExcepcionPorcentajeCero)
   end
 
 end

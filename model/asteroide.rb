@@ -5,12 +5,12 @@ class Asteroide < ObjetoEspacial
 
   def initialize
     super
-    @gestor_de_choques = Hash.new
-    @gestor_de_choques[Nave] = EfectoMasa.new (10)
-    @gestor_de_choques[Misil] = EfectoNulo.new
-    @gestor_de_choques[Bomba] = EfectoNulo.new
-    @gestor_de_choques[Asteroide] = EfectoNulo.new
-    @gestor_de_choques[Estrella] = EfectoNulo.new
+    @choques_posibles = Hash.new
+    @choques_posibles[Nave] = EfectoMasa.new (10)
+    @choques_posibles[Misil] = EfectoNulo.new
+    @choques_posibles[Bomba] = EfectoNulo.new
+    @choques_posibles[Asteroide] = EfectoNulo.new
+    @choques_posibles[Estrella] = EfectoNulo.new
   end
 
 end

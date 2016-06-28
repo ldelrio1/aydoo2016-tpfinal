@@ -41,12 +41,12 @@ describe 'Bomba' do
 
   it 'settea gestorDeChoques espera ExcepcionNumeroIngresado para Porcentaje Cero en EfectoDestructivoPorPorcentaje' do
     bomba = Bomba.new
-    expect{bomba.gestor_de_choques[Misil] = EfectoDestructivoPorPorcentaje.new (0)}.to raise_exception(ExcepcionNumeroIngresado)
+    expect{bomba.choques_posibles[Misil] = EfectoDestructivoPorPorcentaje.new (0)}.to raise_exception(ExcepcionNumeroIngresado)
   end
 
   it 'settea gestorDeChoques espera ExcepcionNumeroIngresado para Unidades Negativas en EfectoDestructivoPorUnidades' do
     bomba = Bomba.new
-    expect{bomba.gestor_de_choques[Bomba] = EfectoDestructivoPorUnidades.new (-5)}.to raise_exception(ExcepcionNumeroIngresado)
+    expect{bomba.choques_posibles[Bomba] = EfectoDestructivoPorUnidades.new (-5)}.to raise_exception(ExcepcionNumeroIngresado)
   end
 
 end
