@@ -153,7 +153,7 @@ end
 
 describe 'Misil contra Asteroide' do
 
-  it 'Misil choca con Asteroide verifica vidaMisil' do
+  it 'Misil choca con Asteroide verifica vida Misil' do
     misil = Misil.new
     misil.vida = 120
     asteroide = Asteroide.new
@@ -162,7 +162,7 @@ describe 'Misil contra Asteroide' do
     expect(misil.vida).to eq vida_misil
   end
 
-  it 'Misil choca con Asteroide verifica masaMisil' do
+  it 'Misil choca con Asteroide verifica masa Misil' do
     misil = Misil.new
     misil.masa = 70
     asteroide = Asteroide.new
@@ -171,7 +171,7 @@ describe 'Misil contra Asteroide' do
     expect(misil.masa).to eq masa_misil
   end
 
-  it 'Misil choca con Asteroide verifica vidaAsteroide' do
+  it 'Misil choca con Asteroide verifica vida Asteroide' do
     misil = Misil.new
     asteroide = Asteroide.new
     misil.chocar_con(asteroide)
@@ -179,7 +179,7 @@ describe 'Misil contra Asteroide' do
     expect(asteroide.vida).to eq vida_asteroide
   end
 
-  it 'Misil choca con Asteroide verifica masaAsteroide' do
+  it 'Misil choca con Asteroide verifica masa Asteroide' do
     misil = Misil.new
     asteroide = Asteroide.new
     asteroide.masa = 220
@@ -191,7 +191,7 @@ end
 
 describe 'Misil contra Estrella' do
 
-  it 'Misil choca con Estrella verifica masaMisil' do
+  it 'Misil choca con Estrella verifica masa Misil' do
     misil = Misil.new
     misil.masa = 340
     estrella = Estrella.new
@@ -200,7 +200,7 @@ describe 'Misil contra Estrella' do
     expect(misil.masa).to eq masa_misil
   end
 
-  it 'Misil choca con Estrella verifica vidaEstrella' do
+  it 'Misil choca con Estrella verifica vida Estrella' do
     misil = Misil.new
     estrella = Estrella.new
     estrella.vida = 40
@@ -274,7 +274,7 @@ end
 
 describe 'Asteroide contra Asteroide' do
 
-  it 'Asteroide1 choca con Asteroide2 verifica masaAsteroide1' do
+  it 'Asteroide1 choca con Asteroide2 verifica masa Asteroide1' do
     asteroide1 = Asteroide.new
     asteroide2 = Asteroide.new
     asteroide1.chocar_con (asteroide2)
@@ -282,7 +282,7 @@ describe 'Asteroide contra Asteroide' do
     expect(asteroide1.masa).to eq masa_asteroide1
   end
 
-  it 'Asteroide1 choca con Asteroide2 verifica vidaAsteroide1' do
+  it 'Asteroide1 choca con Asteroide2 verifica vida Asteroide1' do
     asteroide1 = Asteroide.new
     asteroide2 = Asteroide.new
     asteroide1.chocar_con (asteroide2)
@@ -290,7 +290,7 @@ describe 'Asteroide contra Asteroide' do
     expect(asteroide1.vida).to eq vida_asteroide1
   end
 
-  it 'Asteroide1 choca con Asteroide2 verifica masaAsteroide2' do
+  it 'Asteroide1 choca con Asteroide2 verifica masa Asteroide2' do
     asteroide1 = Asteroide.new
     asteroide2 = Asteroide.new
     asteroide2.masa = 500
@@ -299,7 +299,7 @@ describe 'Asteroide contra Asteroide' do
     expect(asteroide2.masa).to eq masa_asteroide2
   end
 
-  it 'Asteroide1 choca con Asteroide2 verifica vidaAsteroide2' do
+  it 'Asteroide1 choca con Asteroide2 verifica vida Asteroide2' do
     asteroide1 = Asteroide.new
     asteroide2 = Asteroide.new
     asteroide1.chocar_con (asteroide2)
@@ -369,6 +369,133 @@ describe 'Excepcion en choque con objeto sin vida' do
     misil.chocar_con (nave)
     asteroide = Asteroide.new
     expect{asteroide.chocar_con(misil)}.to raise_exception(ExcepcionObjetoEspacialChocadoDestruido)
+  end
+end
+
+describe 'Ejemplo1 Nave choca con Asteroide' do
+
+  it 'verifica vida Nave' do
+    nave = Nave.new
+    asteroide = Asteroide.new
+    asteroide.vida = 50
+    nave.chocar_con(asteroide)
+    vida_nave = 100
+    expect(nave.vida).to eq vida_nave
+  end
+
+  it 'verifica masa Nave' do
+    nave = Nave.new
+    asteroide = Asteroide.new
+    asteroide.vida = 50
+    nave.chocar_con(asteroide)
+    masa_nave = 50
+    expect(nave.masa).to eq masa_nave
+  end
+
+  it 'verifica vida Asteroide' do
+    nave = Nave.new
+    asteroide = Asteroide.new
+    asteroide.vida = 50
+    nave.chocar_con(asteroide)
+    vida_asteroide = 50
+    expect(asteroide.vida).to eq vida_asteroide
+  end
+
+  it 'verifica masa Asteroide' do
+    nave = Nave.new
+    asteroide = Asteroide.new
+    asteroide.vida = 50
+    nave.chocar_con(asteroide)
+    masa_asteroide = 110
+    expect(asteroide.masa).to eq masa_asteroide
+  end
+end
+
+describe 'Ejemplo2 Estrella choca con Misil' do
+  it 'verifica vida Estrella' do
+    estrella = Estrella.new
+    misil = Misil.new
+    estrella.vida = 50
+    estrella.masa = 10
+    misil.vida = 10
+    misil.masa = 30
+    vida_estrella = 50
+    expect(estrella.vida).to eq vida_estrella
+  end
+
+  it 'verifica masa Estrella' do
+    estrella = Estrella.new
+    misil = Misil.new
+    estrella.vida = 50
+    estrella.masa = 10
+    misil.vida = 10
+    misil.masa = 30
+    masa_estrella = 10
+    expect(estrella.masa).to eq masa_estrella
+  end
+
+  it 'verifica vida Misil' do
+    estrella = Estrella.new
+    misil = Misil.new
+    estrella.vida = 50
+    estrella.masa = 10
+    misil.vida = 10
+    misil.masa = 30
+    vida_misil = 10
+    expect(misil.vida).to eq vida_misil
+  end
+
+  it 'verifica masa Misil' do
+    estrella = Estrella.new
+    misil = Misil.new
+    estrella.vida = 50
+    estrella.masa = 10
+    misil.vida = 10
+    misil.masa = 30
+    masa_misil = 30
+    expect(misil.masa).to eq masa_misil
+  end
+end
+
+describe 'Ejemplo3 Bomba choca con otraBomba' do
+  it 'verifica vida Bomba' do
+    bomba = Bomba.new
+    otra_bomba = Bomba.new
+    bomba.vida = 200
+    bomba.masa = 90
+    otra_bomba.vida = 20
+    otra_bomba.masa = 45
+    bomba.chocar_con (otra_bomba)
+    vida_bomba = 100
+    expect(bomba.vida).to eq vida_bomba
+  end
+
+  it 'verifica masa Bomba' do
+    bomba = Bomba.new
+    otra_bomba = Bomba.new
+    bomba.vida = 200
+    bomba.masa = 90
+    otra_bomba.vida = 20
+    otra_bomba.masa = 45
+    bomba.chocar_con (otra_bomba)
+    masa_bomba = 90
+    expect(bomba.masa).to eq masa_bomba
+  end
+
+  it 'verifica vida otraBomba' do
+    bomba = Bomba.new
+    otra_bomba = Bomba.new
+    bomba.vida = 200
+    bomba.masa = 90
+    otra_bomba.vida = 20
+    otra_bomba.masa = 45
+    bomba.chocar_con (otra_bomba)
+    vida_otra_bomba = 0
+    expect(otra_bomba.vida).to eq vida_otra_bomba
+  end
+
+  it 'verifica masa otraBomba' do
+
   end
 
 end
