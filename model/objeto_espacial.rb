@@ -1,3 +1,7 @@
+require_relative '../model/excepcion_destruido'
+require_relative '../model/excepcion_dos_objetos_muertos'
+require_relative '../model/excepcion_chocado_destruido'
+
 class ObjetoEspacial
 
   attr_accessor :masa, :vida, :esta_vivo, :gestor_de_choques
@@ -29,11 +33,11 @@ class ObjetoEspacial
 
       self.actualizar_estado
       objeto_chocado.actualizar_estado
-    elsif super.esta_vivo = false
+    elsif !self.esta_vivo && objeto_chocado.esta_vivo
       fail ExcepcionObjetoEspacialDestruido.new
-    elsif chocado.esta_vivo = false
+    elsif !objeto_chocado.esta_vivo && self.esta_vivo
       fail ExcepcionObjetoEspacialChocadoDestruido.new
-    else
+    elsif !self.esta_vivo && !objeto_chocado.esta_vivo
       fail ExcepcionObjetosMuertos.new
     end
   end
