@@ -17,6 +17,7 @@ class ObjetoEspacial
     end
   end
 
+  #Se podría mejorar la duplicacion del objeto_chocador poniendolo en otro metodo
   def chocar_con (objeto_chocado)
     if self.esta_vivo && objeto_chocado.esta_vivo
 
