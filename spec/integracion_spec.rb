@@ -7,7 +7,6 @@ require_relative '../model/asteroide'
 require_relative '../model/estrella'
 require_relative '../model/excepcion_chocador_destruido'
 require_relative '../model/excepcion_chocado_destruido'
-require_relative '../model/excepcion_dos_objetos_destruidos'
 
 describe 'Nave contra Nave' do
 
