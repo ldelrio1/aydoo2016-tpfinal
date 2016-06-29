@@ -22,6 +22,10 @@ Las clases que la heredan son los efectos de choque concretos: efecto_nulo, efec
 efecto_destructivo_por_unidades y efecto_destructivo_por_porcentaje. Estos efectos se choque cada uno resuelve el problema
 de como queda el objeto después de la colisión, cómo cambia su estado de vida y masa.
 
+* En los choques, cada objeto puede chocar con otro, previa verificación de vida y masa positivos en ambos.
+Se evaluará en el Hash del chocado cómo es el choque con ese objeto y el mismo choque lo resolverá, aumentando o disminuyendo
+masa o vida según corresponda o no realizando ninguna acción si el efecto es nulo, lo mismo ocurre para el objeto chocado.
+
 * Como los objetos tenían las mismas características al crearse; vida = 100, masa = 100, esta_vivo = true; se pensó que 
 no era necesario hacer Test unitarios de todos los objetos_espaciales. 
 Para Testear los choques entre los objetos y los posteriores estados se decidió tener una única clase de Test 
